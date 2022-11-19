@@ -12,7 +12,7 @@ function Header(props) {
 function App() {
     return (
         <div className="App">
-            <Header title="mal seray" />
+            <Header title="Tinder Clone" />
         </div>
     );
 }
