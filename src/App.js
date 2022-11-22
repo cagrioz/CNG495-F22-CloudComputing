@@ -1,18 +1,17 @@
 import './App.css';
-
-function Header(props) {
-    console.log(props);
-    return (
-        <header>
-            <h1>{props.title}</h1>
-        </header>
-    );
-}
+import Header from './Header';
 
 function App() {
     return (
         <div className="App">
-            <Header title="Tinder Clone" />
+            <h1>Tinder Clone</h1>
+            {/*Header*/}
+            <Header />
+            {/*Tinder Card */}
+            {/*Buttons below tinder card */}
+
+            {/*Chat Screens */}
+            {/*Individual Chat Screen */}
         </div>
     );
 }
