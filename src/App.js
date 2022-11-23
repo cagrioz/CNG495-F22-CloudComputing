@@ -1,4 +1,5 @@
 import './App.css';
+import Chats from './Chats';
 import Header from './Header';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
             {/*Buttons below tinder card */}
 
             {/*Chat Screens */}
+            <Chats />
             {/*Individual Chat Screen */}
         </div>
     );

@@ -1,0 +1,15 @@
+.chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.chat__details {
+    text-align: left;
+}
+
+.chat__image {
+    height: 80px;
+    width: 80px;
+}
