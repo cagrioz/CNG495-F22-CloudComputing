@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TinderCard from 'react-tinder-card';
 import F1 from './cagridogu.jpg';
 import F2 from './seray.jpeg';
 import './TinderCards.css';
@@ -18,6 +19,13 @@ function TinderCards() {
     return (
         <div>
             <h1>Tinder Card</h1>
+            {people.map((person) => (
+                <TinderCard className="swipe" key={person.name}>
+                    <div className="card" style={{ backgroundImage: `url(${person.url})` }}>
+                        <h3>{person.name}</h3>
+                    </div>
+                </TinderCard>
+            ))}
         </div>
     );
 }
