@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
-import F1 from './cagridogu.jpg';
 import database from './firebase';
-import F2 from './seray.jpeg';
 import './TinderCards.css';
 
 function TinderCards() {
