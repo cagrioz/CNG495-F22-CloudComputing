@@ -1,20 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import F1 from './cagridogu.jpg';
+import database from './firebase';
 import F2 from './seray.jpeg';
 import './TinderCards.css';
 
 function TinderCards() {
-    const [people, setPeople] = useState([
-        {
-            name: 'Seray Sayan',
-            url: F2,
-        },
-        {
-            name: 'Doğu Çağrı Özarpacı',
-            url: F1,
-        },
-    ]);
+    const [people, setPeople] = useState([]);
+    useEffect(() => {
+        database.collection('people').onSnapshot((snapshot) => setPeople(snapshot.docs.map((doc) => doc.data())));
+    }, []);
 
     return (
         <div>
