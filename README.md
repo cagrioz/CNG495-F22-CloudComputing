@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setup / Installation
 Clone the repo into your local, and then run `npm install` or `yarn` in the repo directory (you've to be in package.json level).
 
-Then all you need to do is run the 'npm start' to have the app running on your local.
+Then all you need to do is run the `npm start` to have the app running on your local.
 
 ## Available Scripts
 
