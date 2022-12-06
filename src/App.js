@@ -1,3 +1,4 @@
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Chats from './Chats';
 import Header from './Header';
@@ -7,25 +8,22 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <TinderCards />
-            {/*
+
             <Router>
                 <Switch>
                     <Route path="/chat">
-                        <h1>CHAT PAGE</h1>
+                        <Chats />
                     </Route>
                     <Route path="/profile">
                         <h1>PROFILE PAGE</h1>
                     </Route>
                     <Route path="/">
-                        <h1>HOME PAGE</h1>
-                         
+                        <TinderCards />
                     </Route>
                 </Switch>
-            </Router>*/}
+            </Router>
             {/*Buttons below tinder card */}
             {/*Chat Screens */}
-            <Chats />
             {/*Individual Chat Screen */}
         </div>
     );

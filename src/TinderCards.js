@@ -10,7 +10,7 @@ function TinderCards() {
     }, []);
 
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
             <h1>Tinder Card</h1>
             <div className="tindeCards_cardContainer">
                 {people.map((person) => (
