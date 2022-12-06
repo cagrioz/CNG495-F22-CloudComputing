@@ -23,9 +23,7 @@ function App() {
                     </Route>
                 </Switch>
             </Router>*/}
-
             {/*Buttons below tinder card */}
-
             {/*Chat Screens */}
             <Chats />
             {/*Individual Chat Screen */}
