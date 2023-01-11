@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f9f9f9;
+    margin-top: 20px;
 }
 
 .header__logo {

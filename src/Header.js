@@ -6,9 +6,11 @@ import './Header.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Box } from '@mui/material';
 
 function Header({ backButton }) {
     const history = useHistory();
+
     return (
         <div className="header">
             {backButton ? (
@@ -24,6 +26,7 @@ function Header({ backButton }) {
             <Link to="/">
                 <img className="header__logo" src={Logo} alt="tinder-logo" />
             </Link>
+
             <Link to="/chat">
                 <IconButton>
                     <QuestionAnswerIcon className="header__icon" fontSize="large" />

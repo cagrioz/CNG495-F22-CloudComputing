@@ -4,11 +4,6 @@ import database from './firebase';
 import './TinderCards.css';
 
 function TinderCards() {
-    const [people, setPeople] = useState([]);
-    useEffect(() => {
-        database.collection('people').onSnapshot((snapshot) => setPeople(snapshot.docs.map((doc) => doc.data())));
-    }, []);
-
     return (
         <div style={{ position: 'relative' }}>
             <h1>Tinder Card</h1>
