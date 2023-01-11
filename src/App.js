@@ -1,5 +1,4 @@
 import { Box, Button, Slider } from '@mui/material';
-import { useState } from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import database from './firebase';
@@ -15,15 +14,26 @@ function App() {
         return `${value}°C`;
     }
 
-    const [value, setValue] = useState([20, 37]);
+    const [selectedRange, setSelectedRange] = useState([20, 34]);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setSelectedRange(newValue);
+    };
+
     const [people, setPeople] = useState([]);
-    
+
     useEffect(() => {
-        database.collection('people').onSnapshot((snapshot) => setPeople(snapshot.docs.map((doc) => doc.data())));
-    }, []);
+        // Make a request to the database with selected age range
+        const unsubscribe = database
+            .collection('people')
+            .where('age', '>=', selectedRange[0])
+            .where('age', '<=', selectedRange[1])
+            .onSnapshot((snapshot) => setPeople(snapshot.docs.map((doc) => doc.data())));
+
+        return () => {
+            unsubscribe();
+        };
+    }, [selectedRange]);
 
     const handleClick = () => {
         database.collection('people').doc('MBKvdFuu3RnFM8qujdzo').update({ liked: true });
@@ -49,18 +59,13 @@ function App() {
                         <Box sx={{ width: 200, mx: 'auto', my: '20px' }}>
                             <Slider
                                 getAriaLabel={() => 'Age range'}
-                                value={value}
+                                value={selectedRange}
                                 onChange={handleChange}
                                 valueLabelDisplay="on"
                                 getAriaValueText={valuetext}
                                 min={18}
                                 max={99}
                             />
-
-                            {/* Apply button */}
-                            <Button variant="contained" color="primary">
-                                Apply
-                            </Button>
                         </Box>
                         <TinderCards people={people} />
                         <SwipeButton handleClick={handleClick} />
