@@ -1,4 +1,6 @@
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import database from './firebase';
 import './App.css';
 import Chats from './Chats';
 import ChatScreen from './ChatScreen';
@@ -7,6 +9,15 @@ import SwipeButton from './SwipeButton';
 import TinderCards from './TinderCards';
 
 function App() {
+    const [people, setPeople] = useState([]);
+    useEffect(() => {
+        database.collection('people').onSnapshot((snapshot) => setPeople(snapshot.docs.map((doc) => doc.data())));
+    }, []);
+
+    const handleClick = () => {
+        database.collection('people').doc('MBKvdFuu3RnFM8qujdzo').update({ liked: true });
+    };
+
     return (
         <div className="App">
             <Router>
@@ -24,8 +35,8 @@ function App() {
                     </Route>
                     <Route path="/">
                         <Header />
-                        <TinderCards />
-                        <SwipeButton />
+                        <TinderCards people={people} />
+                        <SwipeButton handleClick={handleClick} />
                     </Route>
                 </Switch>
             </Router>
