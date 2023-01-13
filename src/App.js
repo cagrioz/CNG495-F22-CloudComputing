@@ -6,11 +6,12 @@ import './App.css';
 import Chats from './Chats';
 import ChatScreen from './ChatScreen';
 import Header from './Header';
+import Map from './Map';
 import SwipeButton from './SwipeButton';
 import TinderCards from './TinderCards';
 
 function App() {
-    function valuetext(value: number) {
+    function valuetext(value) {
         return `${value}°C`;
     }
 
@@ -53,6 +54,9 @@ function App() {
                     </Route>
                     <Route path="/profile">
                         <h1>PROFILE PAGE</h1>
+                    </Route>
+                    <Route path="/map">
+                        <Map></Map>
                     </Route>
                     <Route path="/">
                         <Header />
