@@ -8,6 +8,7 @@
 }
 .chat_details {
     flex: 1;
+    text-align: left;
 }
 
 a {
