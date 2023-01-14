@@ -1,4 +1,4 @@
-import { Box, Button, Slider } from '@mui/material';
+import { Box, Slider } from '@mui/material';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import database from './firebase';
