@@ -11,6 +11,11 @@ import SwipeButton from './SwipeButton';
 import TinderCards from './TinderCards';
 
 function App() {
+    const loggedInUser = {
+        name: 'Cagri Ozarpaci',
+        id: '1GgAaNqNUPE8vEbf22lF',
+    };
+
     function valuetext(value) {
         return `${value}°C`;
     }
@@ -50,7 +55,7 @@ function App() {
                     </Route>
                     <Route path="/chat">
                         <Header backButton="/" />
-                        <Chats />
+                        <Chats user={loggedInUser} />
                     </Route>
                     <Route path="/profile">
                         <h1>PROFILE PAGE</h1>
