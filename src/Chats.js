@@ -38,6 +38,9 @@ function Chats({ user }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chats]);
 
+    console.log('chats', chats);
+    console.log('people', people);
+
     return (
         <div className="chats">
             {chats.length > 0 &&
