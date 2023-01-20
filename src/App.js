@@ -76,8 +76,9 @@ function App() {
                                 max={99}
                             />
                         </Box>
+                        <h1>Available People: {people.length}</h1>
                         <TinderCards people={people} />
-                        <SwipeButton handleClick={handleClick} />
+                        <SwipeButton handleClick={handleClick} people={people} setPeople={setPeople} />
                     </Route>
                 </Switch>
             </Router>

@@ -8,19 +8,32 @@ import FlashOnIcon from '@mui/icons-material/FlashOn';
 import IconButton from '@mui/material/IconButton';
 import './SwipeButton.css';
 
-function SwipeButton({ handleClick }) {
+function SwipeButton({ handleClick, people, setPeople }) {
+    const handleLike = () => {
+        // Remove the last person from people array
+        setPeople(people.slice(0, -1));
+        //database.collection('people').doc(person.id).update({ liked: true });
+    };
+
+    const handleDislike = () => {
+        // Remove the last person from people array
+        setPeople(people.slice(0, -1));
+
+        //database.collection('people').doc(person.id).update({ liked: false });
+    };
+
     return (
         <div className="swipeButtons">
             <IconButton className="swipeButtons_repeat">
                 <ReplayIcon fontSize="large" />
             </IconButton>
-            <IconButton className="swipeButtons_left">
+            <IconButton className="swipeButtons_left" onClick={handleDislike}>
                 <CloseIcon fontSize="large" />
             </IconButton>
-            <IconButton className="swipeButtons_star">
+            <IconButton className="swipeButtons_star" onClick={handleLike}>
                 <StarRateIcon fontSize="large" />
             </IconButton>
-            <IconButton className="swipeButtons_right" onClick={handleClick}>
+            <IconButton className="swipeButtons_right" onClick={handleLike}>
                 <FavoriteIcon fontSize="large" />
             </IconButton>
             <IconButton className="swipeButtons_lightning">
