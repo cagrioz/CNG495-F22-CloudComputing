@@ -77,7 +77,7 @@ function App() {
                             />
                         </Box>
                         <h1>Available People: {people.length}</h1>
-                        <TinderCards people={people} />
+                        <TinderCards people={people} setPeople={setPeople} />
                         <SwipeButton handleClick={handleClick} people={people} setPeople={setPeople} />
                     </Route>
                 </Switch>
